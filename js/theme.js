@@ -1,8 +1,8 @@
 "use strict";
 
-const /** {HTMLElement} */ $HTML = document.documentElement;
+const $HTML = document.documentElement;
 
-let /** {Bool} */ isDark = matchMedia("(prefers-color-scheme: dark)").matches;
+let isDark = matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (sessionStorage.getItem("theme")) {
   $HTML.dataset.theme = sessionStorage.getItem("theme");
