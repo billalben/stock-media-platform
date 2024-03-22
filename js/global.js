@@ -13,3 +13,6 @@ window.addEventListener("scroll", () => {
 // Add ripple effect to all elements with the attribute "data-ripple"
 const $rippleElements = document.querySelectorAll("[data-ripple]");
 $rippleElements.forEach((el) => ripple(el));
+
+// Filter functionality
+window.filterObj = {};

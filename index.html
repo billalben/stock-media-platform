@@ -28,7 +28,7 @@
     <!-- Custom js Link -->
     <script src="./js/global.js" type="module" defer></script>
     <script src="./js/app.js" type="module"></script>
-    <script src="./js/search.js" type="module"></script>
+    <script src="./js/search.js" type="module" defer></script>
   </head>
   <body>
     <!-- #HEADER -->
@@ -94,6 +94,7 @@
             aria-label="Submit search"
             data-search-toggler
             data-ripple
+            data-search-btn
           >
             <span class="material-symbols-outlined" aria-hidden="true">
               search
@@ -135,48 +136,7 @@
 
           <div class="divider"></div>
 
-          <div class="list" data-search-list>
-            <button class="list-item" data-ripple>
-              <span
-                class="material-symbols-outlined leading-icon"
-                aria-hidden="true"
-              >
-                history
-              </span>
-              <span class="body-large text">Nature</span>
-              <div class="state-layer"></div>
-            </button>
-            <button class="list-item" data-ripple>
-              <span
-                class="material-symbols-outlined leading-icon"
-                aria-hidden="true"
-              >
-                history
-              </span>
-              <span class="body-large text">Tree</span>
-              <div class="state-layer"></div>
-            </button>
-            <button class="list-item" data-ripple>
-              <span
-                class="material-symbols-outlined leading-icon"
-                aria-hidden="true"
-              >
-                history
-              </span>
-              <span class="body-large text">Man portrait</span>
-              <div class="state-layer"></div>
-            </button>
-            <button class="list-item" data-ripple>
-              <span
-                class="material-symbols-outlined leading-icon"
-                aria-hidden="true"
-              >
-                history
-              </span>
-              <span class="body-large text">Mountain</span>
-              <div class="state-layer"></div>
-            </button>
-          </div>
+          <div class="list" data-search-list></div>
         </div>
       </div>
 
