@@ -80,7 +80,7 @@ const updateSearchHistory = (searchValue) => {
 const $searchList = document.querySelector("[data-search-list]");
 const historyLength = searchHistory.items.length;
 
-for (let i = 0; (i < historyLength) & (i <= 5); i++) {
+for (let i = 0; (i < historyLength) && (i <= 5); i++) {
   const $listItem = document.createElement("button");
   $listItem.classList.add("list-item");
 
