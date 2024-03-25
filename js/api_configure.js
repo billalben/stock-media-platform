@@ -62,7 +62,7 @@ export const client = {
      * @param {string} id - Photo ID
      * @param {function} callback - The callback function
      */
-    details(id, callback) {
+    detail(id, callback) {
       fetchData(`${root.default}photos/${id}`, callback);
     },
   },
@@ -92,7 +92,7 @@ export const client = {
      * @param {string} id - Videos ID
      * @param {function} callback - The callback function
      */
-    details(id, callback) {
+    detail(id, callback) {
       fetchData(`${root.videos}videos/${id}`, callback);
     },
   },
@@ -116,7 +116,7 @@ export const client = {
      * @param {object} parameters - Url object
      * @param {function} callback - The callback function
      */
-    details(id, parameters, callback) {
+    detail(id, parameters, callback) {
       requestUrl = `${root.default}collections/${id}/media?${urlEncode(
         parameters
       )}`;
