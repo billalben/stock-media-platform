@@ -474,6 +474,21 @@ button:disabled {
     opacity: 1;
   }
 }
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--light-secondary-container);
+  color: var(--light-on-secondary-container);
+  border-radius: var(--radius-small);
+}
+.card-badge .material-symbols-outlined {
+  font-size: 1.8rem;
+}
 
 /* === COMPONENT === */
 /* Icon button */
@@ -768,6 +783,9 @@ button:disabled {
   100% {
     scale: 1;
   }
+}
+.card.video {
+  background-color: var(--surface-container-highest);
 }
 .icon-btn.small {
   min-width: 40px;
