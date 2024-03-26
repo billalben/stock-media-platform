@@ -432,7 +432,7 @@ button:disabled {
   grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   gap: var(--column-gap);
   /* For JavaScript */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .img-cover {
   width: 100%;
@@ -978,6 +978,9 @@ button:disabled {
 }
 
 /* === CURATED PHOTOS & POPULAR VIDEO === */
+:where(.featured-photo, .popular-video) .column {
+  margin-bottom: -800px;
+}
 
 /* === COLLECTION === */
 
