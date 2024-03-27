@@ -2,6 +2,7 @@
 
 // Import
 import { client } from "./api_configure.js";
+import { collectionCard } from "./collection_card.js";
 import { photoCard } from "./photo_card.js";
 import { gridInit, updateGrid } from "./utils/masonry_grid.js";
 import { videoCard } from "./video_card.js";
@@ -38,4 +39,14 @@ client.videos.popular({ per_page: 16 }, (data) => {
     // $videoGrid.appendChild($videoCard);
     updateGrid($videoCard, videoGrid);
   });
+});
+
+// Render collections in home page
+const $collectionGrid = document.querySelector("[data-collection-grid]");
+
+client.collections.featured({ per_page: 18 }, (data) => {
+  data.collections.forEach((collection) => {
+    const $collectionCard = collectionCard(collection);
+    $collectionGrid.appendChild($collectionCard);
+  })
 });
