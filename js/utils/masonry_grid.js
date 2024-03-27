@@ -18,6 +18,7 @@ export const gridInit = ($gridContainer) => {
     const $column = document.createElement("div");
     $column.classList.add("column");
     $gridContainer.appendChild($column);
+
     $columns.push($column);
     $columnsHeight.push(0);
   }
@@ -28,14 +29,13 @@ export const gridInit = ($gridContainer) => {
 /**
  * Update masonry grid.
  * @param {Node} $card - Grid item.
- * @param {Array} columnsHeight - Heights of all columns.
- * @param {NodeList} $columns - All columns.
+ * @param {Object} - columnsHeight - Heights of all columns. - $columns - All columns.
  */
 
-export const updateGrid = function ($card, columnsHeight, $columns) {
-  const minColumnHeight = Math.min(...columnsHeight);
-  const minColumnIndex = columnsHeight.indexOf(minColumnHeight);
+export const updateGrid = function ($card, { $columns, $columnsHeight }) {
+  const minColumnHeight = Math.min(...$columnsHeight);
+  const minColumnIndex = $columnsHeight.indexOf(minColumnHeight);
 
   $columns[minColumnIndex].appendChild($card);
-  columnsHeight[minColumnIndex] = $columns[minColumnIndex].offsetHeight;
+  $columnsHeight[minColumnIndex] = $columns[minColumnIndex].offsetHeight;
 };

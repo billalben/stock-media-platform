@@ -19,7 +19,7 @@ client.photos.curated({ page: 1, per_page: 10 }, (data) => {
     const $photoCard = photoCard(photo);
 
     // $photoGrid.appendChild($photoCard);
-    updateGrid($photoCard, photoGrid.$columnsHeight, photoGrid.$columns);
+    updateGrid($photoCard, photoGrid);
   });
 });
 
@@ -27,7 +27,7 @@ client.photos.curated({ page: 1, per_page: 10 }, (data) => {
 const $videoGrid = document.querySelector("[data-video-grid]");
 $videoGrid.innerHTML = `<div class="skeleton"></div>`.repeat(18);
 
-client.videos.popular({ per_page: 10 }, (data) => {
+client.videos.popular({ per_page: 16 }, (data) => {
   $videoGrid.innerHTML = "";
 
   const videoGrid = gridInit($videoGrid);
@@ -36,6 +36,6 @@ client.videos.popular({ per_page: 10 }, (data) => {
     const $videoCard = videoCard(video);
 
     // $videoGrid.appendChild($videoCard);
-    updateGrid($videoCard, videoGrid.$columnsHeight, videoGrid.$columns);
+    updateGrid($videoCard, videoGrid);
   });
 });

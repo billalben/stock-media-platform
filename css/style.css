@@ -632,6 +632,20 @@ button:disabled {
   font-size: 1.8rem;
   color: var(--on-surface-variant);
 }
+.list-item.two-line {
+  justify-content: space-between;
+  padding-bottom: 12px;
+  height: 72px;
+}
+.list-item.two-line .body-large {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.list-item.two-line > .state-layer {
+  pointer-events: all;
+}
 
 /* Navigation */
 .navigation {
@@ -1001,6 +1015,16 @@ button:disabled {
 }
 
 /* === COLLECTION === */
+.grid-card .label {
+  color: var(--on-surface-variant);
+}
+.collection-grid .list-item {
+  border-bottom: 1px solid var(--outline-variant);
+}
+.collection .btn {
+  margin-block: 12px;
+  margin-inline: auto;
+}
 
 /* === FOOTER === */
 
