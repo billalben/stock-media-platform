@@ -58,15 +58,12 @@ export const photoCard = (photo) => {
   `;
 
   const $cardBanner = $card.querySelector("img");
-  $cardBanner.style.opacity = 0;
 
   $cardBanner.addEventListener("load", function () {
-    this.animate(
-      {
-        opacity: 1,
-      },
-      { duration: 400, fill: "forwards" }
-    );
+    this.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 400,
+      fill: "forwards",
+    });
   });
 
   const $rippleElements = [$card, ...$card.querySelectorAll("[data-ripple]")];
