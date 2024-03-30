@@ -33,13 +33,9 @@ window.filterObj = {};
 if (window.location.search.slice(1)) {
   const /** {object} */ search = urlDecode(window.location.search.slice(1));
 
-  console.log("search", search);
-
   Object.entries(search).forEach((item) => {
     const filterKey = item[0];
     const filterValue = item[1];
-
-    console.log("item", item);
 
     window.filterObj[filterKey] = filterValue;
 
@@ -57,8 +53,6 @@ if (window.location.search.slice(1)) {
           filterValue;
       }
     }
-
-    console.log("window.filterObj", window.filterObj);
   });
 }
 
@@ -77,6 +71,6 @@ window.addEventListener("loadstart", () => {
   document.body.style.opacity = 0;
 });
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   document.body.style.opacity = 1;
 });
