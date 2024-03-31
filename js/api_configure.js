@@ -117,7 +117,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     detail(id, parameters, callback) {
-      requestUrl = `${root.default}collections/${id}/media?${urlEncode(
+      requestUrl = `${root.default}collections/${id}?${urlEncode(
         parameters
       )}`;
       fetchData(requestUrl, callback);
