@@ -77,9 +77,7 @@ const renderPhotos = function (currentPage) {
       isLoaded = true;
 
       // When no more photos found, hider loader
-      if (currentPage >= totalPages) {
-        $loader.style.display = "none";
-      }
+      currentPage >= totalPages && ($loader.style.display = "none");
     }
   );
 };
@@ -89,7 +87,7 @@ renderPhotos(currentPage);
 // Load more photos
 const $loader = document.querySelector("[data-loader]");
 
-window.addEventListener("scroll", () => {
+const loadMore = function () {
   if (
     $loader.getBoundingClientRect().top <= window.innerHeight &&
     currentPage < totalPages &&
@@ -99,4 +97,6 @@ window.addEventListener("scroll", () => {
     isLoaded = false;
     renderPhotos(currentPage);
   }
-});
+};
+
+window.addEventListener("scroll", loadMore);
