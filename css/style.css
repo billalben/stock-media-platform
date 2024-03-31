@@ -1288,3 +1288,18 @@ button:disabled {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/* Responsive for larger than 600px */
+@media (min-width: 600px) {
+  /* BANNER */
+  .banner-card {
+    --gradient-direction: 270deg;
+  }
+  .banner-card .card-content {
+    align-content: center;
+  }
+  .banner-card .card-grid {
+    left: 32%;
+    bottom: -16px;
+  }
+}
