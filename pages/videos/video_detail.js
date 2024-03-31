@@ -36,7 +36,7 @@ const videoId = window.location.search.split("=")[1];
 
 $favoriteBtn.classList[favoriteVideos[videoId] ? "add" : "remove"]("active");
 
-favorite($favoriteBtn, "video", videoId);
+favorite($favoriteBtn, "videos", videoId);
 
 // Render detail data
 
