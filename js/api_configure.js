@@ -5,12 +5,11 @@ import { urlEncode } from "./utils/urlEncode.js";
 
 // API Configuration
 
-const API_KEY = `${process.env.PIXSTOCK_API_KEY}`;
+// const headers = new Headers();
+// headers.append("Authorization", API_KEY);
+// const requestOptions = { headers };
 
-const headers = new Headers();
-headers.append("Authorization", API_KEY);
-
-const requestOptions = { headers };
+const mediaProxyURL = "https://my-proxy-server-da7c.onrender.com/stock-media";
 
 /**
  * Fetch data from the API
@@ -19,7 +18,7 @@ const requestOptions = { headers };
  */
 
 const fetchData = async (url, successCallback) => {
-  const response = await fetch(url, requestOptions);
+  const response = await fetch(url);
 
   if (response.ok) {
     const data = await response.json();
@@ -31,10 +30,10 @@ const fetchData = async (url, successCallback) => {
 
 let requestUrl = "";
 
-const root = {
-  default: "https://api.pexels.com/v1/",
-  videos: "https://api.pexels.com/videos/",
-};
+// const root = {
+//   default: "https://api.pexels.com/v1/",
+//   videos: "https://api.pexels.com/videos/",
+// };
 
 export const client = {
   photos: {
@@ -44,7 +43,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     search(parameters, callback) {
-      requestUrl = `${root.default}search?${urlEncode(parameters)}`;
+      requestUrl = `${mediaProxyURL}/photos/search?${urlEncode(parameters)}`;
       fetchData(requestUrl, callback);
     },
 
@@ -54,7 +53,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     curated(parameters, callback) {
-      fetchData(`${root.default}curated?${urlEncode(parameters)}`, callback);
+      fetchData(`${mediaProxyURL}/photos/curated?${urlEncode(parameters)}`, callback);
     },
 
     /**
@@ -63,7 +62,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     detail(id, callback) {
-      fetchData(`${root.default}photos/${id}`, callback);
+      fetchData(`${mediaProxyURL}/photos/detail/${id}`, callback);
     },
   },
 
@@ -74,7 +73,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     search(parameters, callback) {
-      requestUrl = `${root.videos}search?${urlEncode(parameters)}`;
+      requestUrl = `${mediaProxyURL}/videos/search?${urlEncode(parameters)}`;
       fetchData(requestUrl, callback);
     },
 
@@ -84,7 +83,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     popular(parameters, callback) {
-      fetchData(`${root.videos}popular?${urlEncode(parameters)}`, callback);
+      fetchData(`${mediaProxyURL}/videos/popular?${urlEncode(parameters)}`, callback);
     },
 
     /**
@@ -93,7 +92,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     detail(id, callback) {
-      fetchData(`${root.videos}videos/${id}`, callback);
+      fetchData(`${mediaProxyURL}/videos/detail/${id}`, callback);
     },
   },
 
@@ -104,7 +103,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     featured(parameters, callback) {
-      requestUrl = `${root.default}collections/featured?${urlEncode(
+      requestUrl = `${mediaProxyURL}/collections/featured?${urlEncode(
         parameters
       )}`;
       fetchData(requestUrl, callback);
@@ -117,7 +116,7 @@ export const client = {
      * @param {function} callback - The callback function
      */
     detail(id, parameters, callback) {
-      requestUrl = `${root.default}collections/${id}?${urlEncode(parameters)}`;
+      requestUrl = `${mediaProxyURL}/collections/detail/${id}?${urlEncode(parameters)}`;
       fetchData(requestUrl, callback);
     },
   },
